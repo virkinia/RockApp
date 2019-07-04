@@ -11,4 +11,9 @@
     <string name="hello_mp3_fragment">MP3 FRAGMENT</string>
     <string name="hello_radio_fragment">RADIO FRAGMENT</string>
     <string name="hello_videocam_fragment">RADIO FRAGMENT</string>
+
+    <string name="title_btn_rne1">RNE 1</string>
+    <string name="title_btn_rne3">RNE 3</string>
+    <string name="title_btn_rne5">RNE 5</string>
+
 </resources>
