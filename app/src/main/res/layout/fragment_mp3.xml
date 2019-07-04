@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MP3Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        >
+
+        <Button
+            android:text="PLAY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonPlay"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/buttonPause"
+            android:layout_toStartOf="@+id/buttonPause"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:text="PAUSE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonPause"
+            android:layout_alignBaseline="@+id/buttonPlay"
+            android:layout_alignBottom="@+id/buttonPlay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:text="STOP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonStop"
+            android:layout_alignBaseline="@+id/buttonPause"
+            android:layout_alignBottom="@+id/buttonPause"
+            android:layout_toRightOf="@+id/buttonPause"
+            android:layout_toEndOf="@+id/buttonPause"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RockApp</string>
+    <string name="title_home">Video URL</string>
+    <string name="title_dashboard">MP3</string>
+    <string name="title_videocam">Video</string>
+    <string name="title_notifications">Radio</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">VIDEO FRAGMENT</string>
+    <string name="hello_mp3_fragment">MP3 FRAGMENT</string>
+    <string name="hello_radio_fragment">RADIO FRAGMENT</string>
+    <string name="hello_videocam_fragment">RADIO FRAGMENT</string>
+</resources>
