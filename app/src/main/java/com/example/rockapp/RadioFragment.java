@@ -128,8 +128,13 @@ public class RadioFragment extends Fragment implements View.OnClickListener {
     public void stop() {
 
             player.stop();
-
             player.seekTo(0);
+    }
+
+    public void changeRadio(String url) {
+        stop();
+        setUrl(url);
+        startPlaying();
 
     }
 
@@ -140,6 +145,7 @@ public class RadioFragment extends Fragment implements View.OnClickListener {
         this.pause();
 
     }
+
 
     @Override
     public void onClick(View v) {
@@ -159,17 +165,15 @@ public class RadioFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_rne_1:
                 //Iniciamos el audio
-
-                setUrl("http://radio3.rtveradio.cires21.com/radio3.mp3");
-                startPlaying();
+                changeRadio("http://radio3.rtveradio.cires21.com/radio3.mp3");
                 break;
             case R.id.btn_rne_3:
                 //Pausamos el audio
-                pause();
+                changeRadio("http://radioserver10.profesionalhosting.com:41004/stream");
                 break;
             case R.id.btn_rne_5:
                 //Paramos el audio y volvemos a inicializar
-                stop();
+                changeRadio("http://19983.live.streamtheworld.com/RADIOLE.mp3");
                 break;
 
         }
