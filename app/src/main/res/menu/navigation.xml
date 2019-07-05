@@ -11,14 +11,20 @@
         android:icon="@drawable/ic_music_note_black_24dp"
         android:title="@string/title_dashboard" />
 
+
+
+    <item
+        android:id="@+id/videocam_navigation"
+        android:icon="@drawable/ic_videocam_24dp"
+        android:title="@string/title_videocam" />
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_radio_24dp"
         android:title="@string/title_notifications" />
 
     <item
-        android:id="@+id/videocam"
-        android:icon="@drawable/ic_videocam_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_gallery"
+        android:icon="@drawable/ic_image_24dp"
+        android:title="@string/title_images" />
 
 </menu>

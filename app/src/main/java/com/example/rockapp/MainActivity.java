@@ -29,8 +29,11 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_notifications:
                     setFragment(new RadioFragment());
                     return true;
-                case R.id.videocam:
+                case R.id.videocam_navigation:
                     setFragment(new VideoFileFragment());
+                    return true;
+                    case R.id.navigation_gallery:
+                    setFragment(new GalleryFragment());
                     return true;
             }
             return false;
