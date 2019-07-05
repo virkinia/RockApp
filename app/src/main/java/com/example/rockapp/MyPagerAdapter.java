@@ -14,8 +14,11 @@ public class MyPagerAdapter extends PagerAdapter {
 
 
     private Context context;
-    public MyPagerAdapter(Context context) {
+    private  OnImageClickListener mListener;
+
+    public MyPagerAdapter(Context context, OnImageClickListener listener) {
         this.context = context;
+        mListener = listener;
     }
 
 
@@ -27,11 +30,18 @@ public class MyPagerAdapter extends PagerAdapter {
    itself acts as the object key
    */
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         View view = LayoutInflater.from(context).inflate(R.layout.pager_item_layout, null);
         ImageView imageView = view.findViewById(R.id.image);
         imageView.setImageDrawable(context.getResources().getDrawable(getImageAt(position)));
         container.addView(view);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onItemClick(position);
+            }
+        });
         return view;
     }
     /*
@@ -70,6 +80,10 @@ public class MyPagerAdapter extends PagerAdapter {
             default:
                 return R.drawable.ic_home_black_24dp;
         }
+    }
+
+    public interface OnImageClickListener  {
+         void onItemClick(int position);
     }
 
 }
