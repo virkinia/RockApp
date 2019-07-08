@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 public class MyPagerAdapter extends PagerAdapter {
 
     //Tutorial : https://androidclarified.com/viewpager-example-sliding-images/
@@ -15,6 +17,7 @@ public class MyPagerAdapter extends PagerAdapter {
 
     private Context context;
     private  OnImageClickListener mListener;
+    private ImageView imageView;
 
     public MyPagerAdapter(Context context, OnImageClickListener listener) {
         this.context = context;
@@ -32,8 +35,14 @@ public class MyPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
         View view = LayoutInflater.from(context).inflate(R.layout.pager_item_layout, null);
-        ImageView imageView = view.findViewById(R.id.image);
-        imageView.setImageDrawable(context.getResources().getDrawable(getImageAt(position)));
+        imageView= view.findViewById(R.id.image);
+        if(position == 0) {
+            getImageWithPicasso();
+        } else {
+            imageView.setImageDrawable(context.getResources().getDrawable(getImageAt(position)));
+        }
+
+
         container.addView(view);
 
         view.setOnClickListener(new View.OnClickListener() {
@@ -67,11 +76,20 @@ public class MyPagerAdapter extends PagerAdapter {
     public boolean isViewFromObject(View view, Object object) {
         return object == view;
     }
-    private int getImageAt(int position) {
+
+    private  void getImageWithPicasso() {
+        Picasso.get()
+                .load("https://www.christies.com/img/LotImages/2016/NYR/2016_NYR_12145_0013B_000(pablo_picasso_buste_de_femme).jpg")
+                //Imagen mientras carga
+                .placeholder(context.getResources().getDrawable(R.drawable.ic_radio_24dp))
+                //Imagen si hay un error
+                .error(context.getResources().getDrawable(R.drawable.ic_home_black_24dp))
+                .into(imageView);
+    }
+    private int  getImageAt(int position) {
         switch (position) {
-            case 0:
-                return R.drawable.ic_home_black_24dp;
-            case 1:
+
+                case 1:
                 return R.drawable.ic_music_note_black_24dp;
             case 2:
                 return R.drawable.ic_launcher_background;

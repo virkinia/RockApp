@@ -32,9 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.videocam_navigation:
                     setFragment(new VideoFileFragment());
                     return true;
-                    case R.id.navigation_gallery:
+                case R.id.navigation_gallery:
                     setFragment(new GalleryFragment());
                     return true;
+
             }
             return false;
         }
